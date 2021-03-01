@@ -2,7 +2,6 @@ import React from "react";
 import HTMLText from "../HTMLText/HTMLText";
 
 const DynamicArticle = ({article}) => {
-  console.log(article);
   return (
     <article>
       <header>
