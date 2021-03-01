@@ -1,11 +1,22 @@
 import React from "react";
 import HTMLText from "../HTMLText/HTMLText";
 
-const DynamicArticle = (props) => {
+const DynamicArticle = ({article}) => {
+  console.log(article);
   return (
     <article>
-      {/* add extra html with javascript attributes here */}
-      <HTMLText text={props.article.text} />
+      <header>
+        <h1>{article.title}</h1>
+        <address>{article.author} (
+          <a href={"mailto:" + article.authorEmail}>{article.authorEmail}</a>)
+          <br />
+        </address>
+        <time dateTime={article.timeStamp}>{article.displayDate}</time>
+        <br />
+        <img src={article.image._url} alt="News Picture" width="1100" height="619" />
+      </header> 
+    
+      <HTMLText text={article.text} />
     </article>
   );
 };
